@@ -34,3 +34,19 @@ ENTRYPOINT ["/bin/ping"]
 
 - **CMD / ENTRYPOINT IN KUBERNETES**: 
 - An important matrix to remember in Kubernetes is that the docker field ```ENTRYPOINT``` in Kubernetes should be treated as the ```command``` field.. and ```CMD``` in Kubernetes should be treated as the ```args``` .. The entrypoint being the command that will be run by the cointainer and the args being those passed to the container.
+
+#### Making explicit command and argument mods to the containers used by K8:
+- Conveniently you could also do the following in the pod 'manifest' .. the yaml we've been working in.
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: commands2
+spec:
+  containers:
+    - image: busybox
+      name: count
+      command: ["sleep", "3600"]
+      # could also have 'args: ["3600"] here with just ["sleep"] abvove for command
+```
+- Notice how we pass our specific command to the spec->containers->image specifics section. 
