@@ -31,3 +31,6 @@ ENTRYPOINT ["/bin/ping"]
 ```docker container run -dt --name entrybase-container entrybase -c 20 google.com``` and we see the following: **Notice how we've successfully appended to , but CAN NOT override the ```ENTRYPOINT```** 
 
 ![ex-002](ex-002.png)
+
+- **CMD / ENTRYPOINT IN KUBERNETES**: 
+- An important matrix to remember in Kubernetes is that the docker field ```ENTRYPOINT``` in Kubernetes should be treated as the ```command``` field.. and ```CMD``` in Kubernetes should be treated as the ```args``` .. The entrypoint being the command that will be run by the cointainer and the args being those passed to the container.
