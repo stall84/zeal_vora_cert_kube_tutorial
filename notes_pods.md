@@ -7,3 +7,7 @@
 - [Here is another great article](https://subscription.packtpub.com/book/cloud-and-networking/9781838827694/3/ch03lvl1sec10/understanding-the-difference-between-the-master-and-worker-nodes) 
 
 ![overview of a pod](IMG_3282.jpg)
+
+- Pods can also be quickly created via the command-line with the following format: ```kubectl run [POD NAME] --image=[IMAGE NAME]``` like ```kubectl run nginx-webserver-2 --image=nginx``` to create the same thing as the following yaml manifest would:
+
+![pod-ex2.png](pod-ex2.png)
